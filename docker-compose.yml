@@ -1,0 +1,40 @@
+version: "3"
+volumes:
+  dbdata:
+
+networks:
+  frontend-net:
+  backend-net:
+  mongo-net:
+
+services:
+          frontend:
+              container_name: frontend
+              build: /client/
+              ports:
+                - "8080:80"
+              links:
+                - "backend"
+              networks:
+                - frontend-net
+          backend:
+              container_name: backend
+              build: /server/
+              ports:
+                - "3000:3000"
+              networks:
+                - backend-net
+              environment:
+                MONGODB_URL: mongodb://mongo:27017
+              links:
+                - "mongo"
+          database:
+              container_name: mongo
+              image: mongo:latest
+              networks:
+                - mongo-net
+              volumes:
+                - type: volume
+                  source: dbdata
+              ports:
+                - "27017:27017"
