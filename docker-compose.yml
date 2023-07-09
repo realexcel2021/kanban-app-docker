@@ -1,6 +1,4 @@
 version: "3"
-volumes:
-  dbdata:
 
 networks:
   frontend-net:
@@ -34,7 +32,6 @@ services:
               networks:
                 - mongo-net
               volumes:
-                - type: volume
-                  source: dbdata
+                - ./data:data/db
               ports:
                 - "27017:27017"
