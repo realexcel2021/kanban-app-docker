@@ -27,7 +27,7 @@ services:
               environment:
                 MONGODB_URL: mongodb://mongo:27017
               links:
-                - "mongo"
+                - "database"
           database:
               container_name: mongo
               image: mongo:latest
