@@ -1,10 +1,5 @@
 version: "3"
 
-networks:
-  frontend-net:
-  backend-net:
-  mongo-net:
-
 services:
           frontend:
               container_name: frontend
@@ -35,3 +30,8 @@ services:
                 - ./data:data/db
               ports:
                 - "27017:27017"
+
+networks:
+  frontend-net:
+  backend-net:
+  mongo-net:
