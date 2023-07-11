@@ -3,35 +3,37 @@ version: "3"
 services:
           frontend:
               container_name: frontend
-              build: /client/
+              build: ./client
               ports:
                 - "8080:80"
-              links:
-                - "backend"
               networks:
-                - frontend-net
+                - app-net
+              depends_on:
+                - backend
           backend:
               container_name: backend
-              build: /server/
+              build: ./server
               ports:
                 - "3000:3000"
               networks:
-                - backend-net
+                - app-net
               environment:
                 MONGODB_URL: mongodb://mongo:27017
-              links:
-                - "database"
+              depends_on:
+                - database
           database:
               container_name: mongo
               image: mongo:latest
               networks:
-                - mongo-net
+                - app-net
               volumes:
-                - ./data:data/db
+                - data-volume:data/db
               ports:
                 - "27017:27017"
+              
 
 networks:
-  frontend-net:
-  backend-net:
-  mongo-net:
+  app-net:
+
+volumes:
+  data-volume:

@@ -1,6 +1,5 @@
 FROM node:20-alpine
-WORKDIR /express
-COPY . /express/
+COPY . .
 RUN npm install
 EXPOSE 3000
-ENTRYPOINT ["node", "app.js"]
+ENTRYPOINT ["npm", "start"]
