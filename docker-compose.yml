@@ -1,5 +1,11 @@
 version: "3"
 
+networks:
+  app-net:
+
+volumes:
+  data-volume:
+
 services:
           frontend:
               container_name: frontend
@@ -19,14 +25,15 @@ services:
                 - app-net
               environment:
                 MONGODB_URL: mongodb://mongo:27017
-                PASSWORD_SECRET_KEY: $V6I^Kzd9^8Y%Zq!&S2f47ctdwdx16Lj
+                PASSWORD_SECRET_KEY: V6I^Kzd9^8Y%Zq!&S2f47ctdwdx16Ljk
                 TOKEN_SECRET_KEY: Y&z81D@b0gx%PnFA13iH9Zt5ZfkrLMjji
-                
+
               depends_on:
                 - database
           database:
               container_name: mongo
-              image: mongo:latest
+              image: mongo
+              restart: always
               networks:
                 - app-net
               volumes:
@@ -35,8 +42,3 @@ services:
                 - "27017:27017"
               
 
-networks:
-  app-net:
-
-volumes:
-  data-volume:
