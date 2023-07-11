@@ -19,6 +19,9 @@ services:
                 - app-net
               environment:
                 MONGODB_URL: mongodb://mongo:27017
+                PASSWORD_SECRET_KEY: $V6I^Kzd9^8Y%Zq!&S2f47ctdwdx16Lj
+                TOKEN_SECRET_KEY: Y&z81D@b0gx%PnFA13iH9Zt5ZfkrLMjji
+                
               depends_on:
                 - database
           database:
