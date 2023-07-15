@@ -1,7 +1,7 @@
 import axios from 'axios'
 import queryString from 'query-string'
 
-const baseUrl = 'backend:3000/api/v1/'
+const baseUrl = 'http://backend:3000/api/v1/'
 const getToken = () => localStorage.getItem('token')
 
 const axiosClient = axios.create({

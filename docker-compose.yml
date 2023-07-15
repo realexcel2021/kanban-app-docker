@@ -3,9 +3,6 @@ version: "3"
 networks:
   app-net:
 
-volumes:
-  data-volume:
-
 services:
           frontend:
               container_name: frontend
@@ -14,8 +11,6 @@ services:
                 - "8080:80"
               networks:
                 - app-net
-              depends_on:
-                - backend
           backend:
               container_name: backend
               build: ./server
@@ -27,7 +22,6 @@ services:
                 MONGODB_URL: mongodb://mongo:27017
                 PASSWORD_SECRET_KEY: V6I^Kzd9^8Y%Zq!&S2f47ctdwdx16Ljk
                 TOKEN_SECRET_KEY: Y&z81D@b0gx%PnFA13iH9Zt5ZfkrLMjji
-
               depends_on:
                 - database
           database:
@@ -36,9 +30,6 @@ services:
               restart: always
               networks:
                 - app-net
-              volumes:
-                - data-volume:data/db
               ports:
                 - "27017:27017"
-              
 
