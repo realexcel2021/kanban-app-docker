@@ -22,8 +22,10 @@
 
 # Running the Application on Docker
 
- configure maximum ports for backend to connect to database use command `echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
+ configure maximum ports for backend to connect to database use command 
+ `echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
 
-provide the backend url to the frontend see `line 3` (if you're running on local machine edit backend and add local host there) [axiosClient](https://github.com/realexcel2021/kanban-app-docker/blob/master/client/src/api/axiosClient.js)
+provide the backend url to the frontend see `line 3` (if you're running on local machine edit the baseUrl and add localhost there. If running on a server, provide public key) [axiosClient](https://github.com/realexcel2021/kanban-app-docker/blob/master/client/src/api/axiosClient.js)
 
-run command `docker-compose up -d`
+run command
+    - docker-compose up -d
