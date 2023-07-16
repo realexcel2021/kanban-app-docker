@@ -32,4 +32,8 @@ services:
                 - app-net
               ports:
                 - "27017:27017"
+              volumes:
+                - "dbdata:/etc/mongo"
 
+volumes:
+  dbdata:
