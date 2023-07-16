@@ -28,4 +28,6 @@
 provide the backend url to the frontend see `line 3` (if you're running on local machine edit the baseUrl and add localhost there. If running on a server, provide public key) [axiosClient](https://github.com/realexcel2021/kanban-app-docker/blob/master/client/src/api/axiosClient.js)
 
 run command
-    - docker-compose up -d
+    `docker-compose up -d`
+To Access the frontend, visit
+    `localhost:8080`
