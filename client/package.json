@@ -10,7 +10,7 @@
     "@fontsource/roboto": "^4.5.7",
     "@mui/icons-material": "^5.8.4",
     "@mui/lab": "^5.0.0-alpha.88",
-    "@mui/material": "^5.8.6",
+    "@mui/material": "^5.13.6",
     "@reduxjs/toolkit": "^1.8.3",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
