@@ -11,7 +11,7 @@
     "crypto-js": "^4.1.1",
     "debug": "~2.6.9",
     "dotenv": "^16.0.1",
-    "express": "~4.16.1",
+    "express": "~4.19.2",
     "express-validator": "^6.14.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.12.0",
